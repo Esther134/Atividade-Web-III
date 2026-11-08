@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Galeria de fotos | Fatec Franco da Rocha</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Galeria de fotos - início">
+          <span class="brand-mark" aria-hidden="true">F</span>
+          <span>Galeria <span class="brand-muted">de fotos</span></span>
+        </a>
+        <span class="course-label">Desenvolvimento Web III</span>
+      </header>
+
+      <section id="login-screen" class="login-layout" aria-labelledby="login-title">
+        <div class="intro-panel">
+          <p class="eyebrow">Projeto prático · Fatec Franco da Rocha</p>
+          <h1>Suas fotos,<br>em um só lugar.</h1>
+          <p class="intro-copy">Entre para explorar uma coleção de fotografias. Escolha uma imagem para ver todos os detalhes.</p>
+          <div class="photo-decoration" aria-hidden="true">
+            <span class="decoration-tile tile-one">✳</span>
+            <span class="decoration-tile tile-two">◒</span>
+            <span class="decoration-tile tile-three">⌁</span>
+          </div>
+        </div>
+
+        <div class="login-card">
+          <p class="eyebrow">Bem-vindo(a)</p>
+          <h2 id="login-title">Acesse sua conta</h2>
+          <p class="card-copy">Use os dados de teste para entrar na galeria.</p>
+          <form id="login-form">
+            <label for="username">Usuário</label>
+            <input id="username" name="username" type="text" autocomplete="username" placeholder="Seu nome de usuário" required>
+
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+
+            <p id="login-message" class="form-message" role="alert" hidden></p>
+            <button id="login-button" class="button button-primary button-full" type="submit">
+              <span class="button-label">Entrar</span>
+              <span class="button-spinner" aria-hidden="true" hidden></span>
+            </button>
+          </form>
+          <p class="test-hint"><strong>Acesso de teste</strong><br>Usuário: Bret · Senha: Sincere@april.biz</p>
+        </div>
+      </section>
+
+      <section id="gallery-screen" class="gallery-screen" aria-labelledby="gallery-title" hidden>
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow">Sua coleção</p>
+            <h1 id="gallery-title">Galeria de fotos</h1>
+            <p class="section-copy">Explore as miniaturas e selecione uma foto para ampliar.</p>
+          </div>
+          <button id="logout-button" class="button button-secondary" type="button">Sair</button>
+        </div>
+
+        <div id="gallery-content">
+          <div class="gallery-tools">
+            <label class="search-field" for="photo-search">
+              <span aria-hidden="true">⌕</span>
+              <input id="photo-search" type="search" placeholder="Buscar pelo título..." autocomplete="off">
+            </label>
+            <p id="photo-count" class="photo-count" aria-live="polite"></p>
+          </div>
+          <p id="gallery-message" class="notice" role="status" aria-live="polite">Carregando fotos...</p>
+          <div id="photo-list" class="photo-grid" aria-live="polite"></div>
+          <nav id="pagination" class="pagination" aria-label="Páginas da galeria" hidden></nav>
+        </div>
+
+        <section id="photo-detail" class="photo-detail" aria-live="polite" hidden>
+          <button id="back-button" class="back-button" type="button"><span aria-hidden="true">←</span> Voltar para a galeria</button>
+          <div class="detail-card">
+            <div class="detail-image-wrap">
+              <img id="detail-image" src="" alt="">
+            </div>
+            <div class="detail-caption">
+              <p class="eyebrow">Foto selecionada</p>
+              <h2 id="detail-title"></h2>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="site-footer">
+        <span>Projeto acadêmico · Fatec Franco da Rocha</span>
+        <span>Dados fornecidos por JSONPlaceholder</span>
+      </footer>
+    </main>
+  </body>
+</html>
